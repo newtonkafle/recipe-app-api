@@ -1,6 +1,5 @@
 """
-Django command to wait for the database 
-to be availabe while loading the application
+Django command to wait database while loading application
 
 """
 
