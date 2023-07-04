@@ -1,6 +1,6 @@
 """
 Django command to wait for the database 
-    to be availabe while loading the application
+to be availabe while loading the application
 
 """
 

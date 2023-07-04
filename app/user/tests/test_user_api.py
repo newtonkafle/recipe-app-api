@@ -40,8 +40,7 @@ class PublicUserApiTest(TestCase):
         self.assertNotIn('password', res.data)
 
     def test_user_with_email_exists_error(self):
-        """Test whether error occured while creating 
-            user with existing email"""
+        """Test error for creating user with existing email"""
         payload = {
             'email': 'test@example.com',
             'password': 'testpass123',
@@ -53,8 +52,7 @@ class PublicUserApiTest(TestCase):
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_password_too_short_error(self):
-        """Test an error is returned if 
-            the password is less than 5 chars."""
+        """Test error if password is less than 5 chars."""
         payload = {
             'email': 'test@example.com',
             'password': 'test',

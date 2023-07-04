@@ -362,8 +362,8 @@ class PrivateRecipeAPITests(TestCase):
             self.assertTrue(exists)
 
     def test_create_ingredients_on_update(self):
-        """Test to check ingredient will be created 
-            while updating the recipe with non-existing ingredient. """
+        """Test ingredient created updating 
+        recipe with non-existing ingredient. """
         recipe = create_recipe(user=self.user)
 
         payload = {
