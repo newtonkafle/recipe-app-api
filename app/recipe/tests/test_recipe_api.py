@@ -209,7 +209,7 @@ class PrivateRecipeAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_404_NOT_FOUND)
         self.assertTrue(Recipe.objects.filter(id=recipe.id).exists())
 
-    # _________________________test for recipe with tags feature_________________________________
+    # ___test for recipe with tags feature_____#
 
     def test_create_recipe_with_new_tag(self):
         """Test for creating the recipe wiht new tag successfully. """
@@ -302,7 +302,7 @@ class PrivateRecipeAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(recipe.tags.count(), 0)
 
-    # _______________________________test for recipe with ingredients feature___________________________
+    # ____test for recipe with ingredients feature____#
 
     def test_create_recipe_with_new_ingredients(self):
         """Test creating a recipe with new ingredients. """
@@ -362,11 +362,13 @@ class PrivateRecipeAPITests(TestCase):
             self.assertTrue(exists)
 
     def test_create_ingredients_on_update(self):
-        """Test to check ingredient will be created while updating the recipe with non-existing ingredient. """
+        """Test to check ingredient will be created 
+            while updating the recipe with non-existing ingredient. """
         recipe = create_recipe(user=self.user)
 
         payload = {
-            'ingredients': [{'name': 'Ingredients Check 1'}, {'name': 'Ingredients Check 2'}]
+            'ingredients': [{'name': 'Ingredients Check 1'},
+                            {'name': 'Ingredients Check 2'}]
         }
         url = detail_url(recipe.id)
         res = self.client.patch(url, payload, format='json')
